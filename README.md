@@ -1,8 +1,6 @@
 # Pilhas-e-Filas
 
 ``` javascript
-const prompt = require('prompt-sync')();
-
 // Classe para implementar a Fila (FIFO)
 class FilaAtendimento {
   constructor() {
@@ -96,68 +94,4 @@ class PilhaDocumentos {
     }
   }
 }
-
-// Função principal para interação com o usuário
-function main() {
-  const filaAtendimento = new FilaAtendimento();
-  const pilhaDocumentos = new PilhaDocumentos();
-
-  console.log("Sistema de Atendimento Escolar");
-
-  while (true) {
-    console.log("\nMenu:");
-    console.log("1 - Adicionar aluno à fila");
-    console.log("2 - Atender aluno");
-    console.log("3 - Ver próximo aluno");
-    console.log("4 - Mostrar fila");
-    console.log("5 - Adicionar documento");
-    console.log("6 - Resolver documento");
-    console.log("7 - Ver documento no topo");
-    console.log("8 - Mostrar documentos");
-    console.log("9 - Sair");
-
-    const opcao = prompt("Escolha uma opção: ");
-
-    switch (opcao) {
-      case '1':
-        const nomeAluno = prompt("Digite o nome do aluno: ");
-        filaAtendimento.adicionarAluno(nomeAluno);
-        break;
-      case '2':
-        filaAtendimento.atenderAluno();
-        break;
-      case '3':
-        filaAtendimento.verProximoAluno();
-        break;
-      case '4':
-        filaAtendimento.mostrarFila();
-        break;
-      case '5':
-        const descDocumento = prompt("Digite a descrição do documento: ");
-        pilhaDocumentos.adicionarDocumento(descDocumento);
-        break;
-      case '6':
-        pilhaDocumentos.resolverDocumento();
-        break;
-      case '7':
-        pilhaDocumentos.verTopoDocumento();
-        break;
-      case '8':
-        pilhaDocumentos.mostrarDocumentos();
-        break;
-      case '9':
-        console.log("\nEstado final do sistema:");
-        console.log("\nFila de Atendimento:");
-        filaAtendimento.mostrarFila();
-        console.log("\nPilha de Documentos:");
-        pilhaDocumentos.mostrarDocumentos();
-        console.log("\nEncerrando o sistema...");
-        return;
-      default:
-        console.log("Opção inválida. Por favor, escolha uma opção de 1 a 9.");
-    }
-  }
-}
-
-main();
 ```
